@@ -1,10 +1,11 @@
 {
   "name": "sg-calc",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "用于处理js小数计算不精确的问题",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parcel build src/index.js -o ./index.js"
   },
   "keywords": [
     "js",
@@ -13,5 +14,9 @@
     "精确计算"
   ],
   "author": "lronelove",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "index": "^0.4.0",
+    "index.js": "0.0.3"
+  }
 }

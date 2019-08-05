@@ -9,9 +9,16 @@ npm i sg-calc --save -dev
 yarn add sg-calc
 ```
 
+引入
 ```javascript
 const sg_calc = require('sg-calc')
 ```
+
+或者
+```javascript
+import sg_calc from 'sg-calc'
+```
+
 
 1、 加法
 ```javascript
@@ -25,7 +32,7 @@ const res2 = sg_calc.mimus(0.3, 0.1) // 0.2
 
 3、 乘法
 ```javascript
-const res3 = sg_calc.mutiply(55.551, 100) // 5555.1
+const res3 = sg_calc.multiply(55.551, 100) // 5555.1
 ```
 
 4、 除法
