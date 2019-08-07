@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "parcel build src/index.js -o ./index.js"
+    "build": "parcel build src/index.js -o ./index.js",
+    "build:script": "parcel build src/sg_calc.js -o ./sg_calc.js"
   },
   "keywords": [
     "js",
@@ -15,8 +16,8 @@
   ],
   "author": "lronelove",
   "license": "ISC",
-  "dependencies": {
-    "index": "^0.4.0",
-    "index.js": "0.0.3"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lronelove/sg-salc.js.git"
   }
 }
