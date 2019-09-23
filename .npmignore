@@ -2,3 +2,10 @@
 .dist
 node_modules
 README.md
+dist
+src
+.gitignore
+index.html
+package-lock.json
+sg_calc.js
+.idea
