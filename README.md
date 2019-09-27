@@ -27,7 +27,7 @@ const res1 = sg_calc.add(0.1, 0.2) // 0.3
 
 2、 减法
 ```javascript
-const res2 = sg_calc.mimus(0.3, 0.1) // 0.2
+const res2 = sg_calc.minus(0.3, 0.1) // 0.2
 ```
 
 3、 乘法
