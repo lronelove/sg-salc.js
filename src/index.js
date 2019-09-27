@@ -2,7 +2,7 @@
 	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
 		typeof define === 'function' && define.amd ? define(factory) : global['sg_calc'] = factory()
 })(this, function () {
-	const assert = require('assert')
+	// const assert = require('assert')
 
 	// 乘法
 	function multiply(num1, num2) {
@@ -71,19 +71,19 @@
 		return num.toString().indexOf('-') === 0
 	}
 
-	function test() {
-		assert.equal(isNegative(-2), true, '是负数')
-		assert.equal(isNegative(12), false, '不是负数')
-		assert.equal(multiply(-1.1, 10), -11, '负数相乘')
-		assert.equal(multiply(5.53111, 10), 55.3111, '数字相乘')
-		assert.equal(divide(0.3, 0.1), 3, '数字相除')
-		assert.equal(divide(-0.3, 0.1), -3, '负数除法')
-		assert.equal(add(0.1, 0.2), 0.3, '加法运算')
-		assert.equal(add(-0.1, -0.2), -0.3, '负数加法')
-		assert.equal(minus(0.3, 0.1), 0.2, '减法运算')
-	}
+	// function test() {
+	// 	assert.equal(isNegative(-2), true, '是负数')
+	// 	assert.equal(isNegative(12), false, '不是负数')
+	// 	assert.equal(multiply(-1.1, 10), -11, '负数相乘')
+	// 	assert.equal(multiply(5.53111, 10), 55.3111, '数字相乘')
+	// 	assert.equal(divide(0.3, 0.1), 3, '数字相除')
+	// 	assert.equal(divide(-0.3, 0.1), -3, '负数除法')
+	// 	assert.equal(add(0.1, 0.2), 0.3, '加法运算')
+	// 	assert.equal(add(-0.1, -0.2), -0.3, '负数加法')
+	// 	assert.equal(minus(0.3, 0.1), 0.2, '减法运算')
+	// }
 
-	test()
+	// test()
 
 	const sg_calc = {
 		add: add,
