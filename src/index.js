@@ -71,26 +71,61 @@
 		return num.toString().indexOf('-') === 0
 	}
 
-	// function test() {
-	// 	assert.equal(isNegative(-2), true, '是负数')
-	// 	assert.equal(isNegative(12), false, '不是负数')
-	// 	assert.equal(multiply(-1.1, 10), -11, '负数相乘')
-	// 	assert.equal(multiply(5.53111, 10), 55.3111, '数字相乘')
-	// 	assert.equal(divide(0.3, 0.1), 3, '数字相除')
-	// 	assert.equal(divide(-0.3, 0.1), -3, '负数除法')
-	// 	assert.equal(add(0.1, 0.2), 0.3, '加法运算')
-	// 	assert.equal(add(-0.1, -0.2), -0.3, '负数加法')
-	// 	assert.equal(minus(0.3, 0.1), 0.2, '减法运算')
-	// }
-
-	// test()
-
 	const sg_calc = {
 		add: add,
 		minus: minus,
 		multiply: multiply,
-		divide: divide
+		divide: divide,
+		result: 0,
+		start (num) {
+			let self = this
+
+			return createTempCalc(self, num)
+		},
+		end () {
+			return this.result
+		}
 	}
+
+	// 创建临时计算的函数
+	function createTempCalc (self, num) {
+		return {
+			add (num1) {
+				let res = sg_calc.add(num, num1)
+				self.result = res
+
+				return createTempCalc(self, res)
+			},
+			minus (num2) {
+				let res = sg_calc.minus(num, num2)
+				self.result = res
+
+				return createTempCalc(self, res)
+			},
+			multiply (num3) {
+				let res = sg_calc.multiply(num, num3)
+				self.result = res
+
+				return createTempCalc(self, res)
+			},
+			divide (num4) {
+				let res = sg_calc.divide(num, num4)
+				self.result = res
+
+				return createTempCalc(self, res)
+			},
+			end () {
+				return self.end()
+			}
+		}
+	}
+
+	// function test() {
+	// 	assert.equal(calc.start(0.1).add(0.2).end(), 0.3, '测试1')
+	// 	assert.equal(calc.start(0.1).add(0.2).multiply(3).end(), 0.9, '测试2')
+	// 	assert.equal(calc.start(0.3).minus(3).end(), -2.7, '测试3')
+	// 	assert.equal(calc.start(0.2).multiply(0.4).add(1).end(), 1.08, '测试4')
+	// }
 
 	return sg_calc
 });
