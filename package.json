@@ -1,6 +1,6 @@
 {
   "name": "sg-calc",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "用于处理js小数计算不精确的问题",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,8 @@
     "js",
     "number",
     "小数计算，精度",
-    "精确计算"
+    "精确计算",
+    "链式调用"
   ],
   "author": "lronelove",
   "license": "ISC",
