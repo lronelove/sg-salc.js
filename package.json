@@ -1,12 +1,11 @@
 {
   "name": "sg-calc",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "用于处理js小数计算不精确的问题",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "parcel build src/index.js -o ./index.js",
-    "build:script": "parcel build src/sg_calc.js -o ./sg_calc.js"
+    "build": "parcel build src/index.js -o ./index.js"
   },
   "keywords": [
     "js",
