@@ -18,7 +18,7 @@ npm i sg-calc --save -dev
 yarn add sg-calc
 ```
 
-引入 import
+引入  import
 ```javascript
 const sg_calc = require('sg-calc')
 ```
