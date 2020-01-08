@@ -2,7 +2,22 @@
 	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
 		typeof define === 'function' && define.amd ? define(factory) : global['sg_calc'] = factory()
 })(this, function () {
-	// const assert = require('assert')
+	// 规范小数科学计数法带来的影响
+	function formatNumString(numString) {
+		let eIndex = numString.indexOf('e')
+
+		if (eIndex > -1 && numString.indexOf('-') > 0) {
+			let pureNumString = numString.slice(0, eIndex)
+			let power = parseInt(numString.slice(eIndex + 2))
+			let noDotString = pureNumString.replace('.', '')
+			let zeroString = '0.' + '0'.repeat(power - 1)
+			let resString = zeroString + noDotString
+
+			return resString
+		}
+
+		return numString
+	}
 
 	// 乘法
 	function multiply(num1, num2) {
@@ -56,8 +71,8 @@
 
 	// 拆分数字
 	function splitNumber(num1, num2) {
-		const num1Arr = num1.toString().split('.')
-		const num2Arr = num2.toString().split('.')
+		const num1Arr = formatNumString(num1.toString()).split('.')
+		const num2Arr = formatNumString(num2.toString()).split('.')
 		const len1 = num1Arr[1] ? num1Arr[1].length : 0
 		const len2 = num2Arr[1] ? num2Arr[1].length : 0
 		const maxLen = Math.max(len1, len2)
